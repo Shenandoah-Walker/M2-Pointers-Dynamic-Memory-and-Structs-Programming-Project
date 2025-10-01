@@ -6,7 +6,7 @@ struct student {
   int id;
   double average;
   char letterGrade;
-}
+};
 
 /*
 Function: getData
