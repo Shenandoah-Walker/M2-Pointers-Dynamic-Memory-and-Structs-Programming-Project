@@ -1,63 +1,94 @@
-//Reverse Array Program
+//Course Grade Program
+
+//Struct Definition
+struct student {
+  string name;
+  int id;
+  double average;
+  char letterGrade;
+}
+
+/*
+Function: getData
+Purpose: To read the data from a file and store it in a struct
+Parameters:
+ - file: the file to read from
+ - studentCnt: the number of students
+ - testsCnt: the number of tests
+Returns: a pointer to the array of structs
+Preconditions: the file has been successfully opened
+Postconditions: the data has been read and stored in the struct
+*/
+
+student* getData(ifstream& file, int& studentCnt, int& testsCnt);
+
+/*
+Function: calcAverage
+Purpose: To calculate the average of the test grades and the course grade for each student
+Parameters:
+ - students[]: the array of structs
+ - studentCnt: the number of students
+ - testsCnt: the number of tests
+Returns: None
+Preconditions: the data has been read and stored in the struct
+Postconditions: the average and course grade have been calculated and stored in the struct
+*/
+
+void calcAverage(student students[], int studentCnt, int testsCnt);
+
+/*
+Function: createReport
+Purpose: To print a formatted report
+Parameters:
+ - students[]: the array of structs
+ - studentCnt: the number of students
+ - testsCnt: the number of tests
+Returns: None
+Preconditions: the data has been read and stored in the struct
+Postconditions: a formatted report has been printed
+*/
+
+void createReport(student students[], int studentCnt, int testsCnt);
+
+/*
+Function: calcLetterGrade
+Purpose: Calculates a letter grade from an average test score. This function is provided
+with the test score and returns the letter grade.
+Parameters:
+ - average: The average test score
+Returns: The letter grade as a char
+Preconditions: The average must be a valid double.
+Postconditions: The letter grade will be returned as a char.
+*/
+
+char calcLetterGrade(double average);
+
 
 #include <iostream>
 
 using namespace std;
-/*
-Function: ReverseArray
-Purpose: To reverse the contents of an array
-Parameters:
- - int const arr[]: The array to be reversed
- - int size: The size of the array
-Returns: A pointer to the reversed array
-Preconditions: The array must be populated with values
-Postconditions: The array is reversed
-*/
 
-int *ReverseArray(int const arr[], int size);
+int main() {
 
-/* 
-Function: print
-Purpose: To print the contents of an array
-Parameters:
- - int const arr[]: The array to be printed
- - int size: The size of the array
-Returns: None
-Preconditions: The array must be populated with values
-Postconditions: The array is printed to the console
-*/
-
-void print(int const arr[], int size);
-
-int main() { 
-    //Create an array of integers that will be reversed. The array size and the contents may be changed if desired.
-    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    //Call the ReverseArray function and store the returned pointer in a pointer variable.
-    int *reversed = ReverseArray(arr, 10);
-    //Use the print function to print the original array and the reversed array.
-    cout << "Original array:" << endl;
-    print(arr, 10);
-    cout << endl;
-    cout << "Reversed array:" << endl;
-    print(reversed, 10);
-
-   //Delete the reversed array and end the program.
-    delete[] reversed;
-    return 0;
+  
 }
 
-int *ReverseArray(int const arr[], int size) {
-    int *reversed = new int[size];
-    for (int i = 0; i < size; i++) {
-        reversed[i] = arr[size - i - 1];
-    }
-    return reversed;
-}
 
-void print(int const arr[], int size) {
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+
+char calcLetterGrade(double average) {
+  if (average >= 90) {
+      return 'A';
+  }
+  else if (average >= 80) {
+      return 'B';
+  }
+  else if (average >= 70) {
+      return 'C';
+  }
+  else if (average >= 60) {
+      return 'D';
+  }
+  else {
+      return 'F';
+  }
 }
