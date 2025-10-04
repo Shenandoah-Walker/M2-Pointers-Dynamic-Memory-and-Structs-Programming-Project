@@ -41,6 +41,7 @@ int main() {
 
     //Call the ReverseArray function and store the returned pointer in a pointer variable.
     int *reversed = ReverseArray(arr, 10);
+    
     //Use the print function to print the original array and the reversed array.
     cout << "Original array:" << endl;
     print(arr, 10);
