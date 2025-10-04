@@ -1,5 +1,11 @@
 //Reverse Array Program
 
+
+/*
+This program takes an integer array and reverses the contents of the array. Then, it prints the original array and the reversed array to the console.
+*/
+
+
 #include <iostream>
 
 using namespace std;
