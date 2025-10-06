@@ -137,9 +137,9 @@ void createReport(student students[], int studentCnt, int testsCnt) {
     cout << fixed << setprecision(1);
     cout << endl;
     cout << "Student Name" << setw(20) << "Student ID" << setw(25) << "Average Test Score" << setw(20) << "Letter Grade" << endl;
-    cout << "------------------------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
     for (int count = 0; count < studentCnt; count++)
-        cout << left << setw(25) << students[count].name << setw(20) << students[count].id << setw(15) << students[count].average << setw(50) << students[count].letterGrade << endl;
+        cout << left << setw(25) << students[count].name << setw(20) << students[count].id << setw(15) << students[count].average << right << setw(12) << students[count].letterGrade << endl;
 }
 
 
