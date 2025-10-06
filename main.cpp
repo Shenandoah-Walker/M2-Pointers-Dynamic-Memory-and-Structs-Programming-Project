@@ -1,5 +1,6 @@
 //Course Grade Program
 
+/*This program reads a list of students, their ID numbers, and their test scores from a file. It then calculates the average of the test grades for each student. It then uses those averages to calculate the letter grade for each student. Finally, it prints a formatted report of the students' names, ID numbers, average test scores, and letter grades. */
 
 #include <iostream>
 #include <iomanip>
