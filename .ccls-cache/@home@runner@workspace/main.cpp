@@ -136,10 +136,10 @@ void calcAverage(student students[], int studentCnt, int testsCnt) {
 void createReport(student students[], int studentCnt, int testsCnt) {
     cout << fixed << setprecision(1);
     cout << endl;
-    cout << "Student Name" << setw(25) << "Student ID" << setw(23) << "Average Test Score" << setw(25) << "Letter Grade" << endl;
+    cout << "Student Name" << setw(25) << "Student ID" << setw(25) << "Average Test Score" << setw(25) << "Letter Grade" << endl;
     cout << "-------------------------------------------------------------------------" << endl;
     for (int count = 0; count < studentCnt; count++)
-        cout << students[count].name << setw(25) << students[count].id << setw(25) << students[count].average << setw(25) << students[count].letterGrade << endl;
+        cout << left << setw(25) << students[count].name << setw(20) << students[count].id << setw(15) << students[count].average << setw(15) << students[count].letterGrade << endl;
 }
 
 
